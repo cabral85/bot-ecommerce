@@ -1,6 +1,5 @@
 package com.cabralbots.ecommerce.service;
 
-import com.cabralbots.ecommerce.entity.Product;
 import com.cabralbots.ecommerce.entity.ProductImage;
 import com.cabralbots.ecommerce.repository.ProductImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,8 @@ public class ProductImageService {
         return productImageRepository.findById(productImage.getIdProductImage());
     }
 
-    public List<ProductImage> GetProductImages(Product product){
-        return productImageRepository.findAllByProduct_IdProduct(product.getIdProduct());
+    public List<ProductImage> GetProductImages(ProductImage productImage){
+        return productImageRepository.findAllByProduct_IdProduct(productImage.getProduct().getIdProduct());
     }
 
     public void DeleteImage(ProductImage productImage){
