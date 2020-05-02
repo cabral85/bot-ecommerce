@@ -13,9 +13,9 @@ import java.util.Date;
 @NoArgsConstructor
 public class User implements Serializable {
     @Id
-    @Column(name = "id")
+    @Column(name = "id_user")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idUser;
+    private Long idUser;
 
     @Column(name = "login", length = 20, nullable = false)
     private String login;
@@ -43,7 +43,6 @@ public class User implements Serializable {
                 ", login='" + login + '\'' +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", createDate=" + createDate +
                 '}';

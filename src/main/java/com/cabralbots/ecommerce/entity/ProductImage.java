@@ -12,13 +12,13 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class ProductImage implements Serializable {
     @Id
-    @Column(name = "id")
+    @Column(name = "id_product_image")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idProductImage;
+    private Long idProductImage;
 
     @Column(name = "id_product")
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id_product")
     private Product product;
 
     @Column(name = "path_image", length = 1000, nullable = false)

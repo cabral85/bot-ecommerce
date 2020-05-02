@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Data
 @Entity
@@ -13,16 +14,16 @@ import java.io.Serializable;
 public class UserProduct implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Integer idUserProduct;
+    @Column(name = "id_user_product")
+    private Long idUserProduct;
 
-    @ManyToMany
-    @JoinColumn(name = "id")
+    @OneToOne
+    @JoinColumn(name = "id_user")
     @Column(name = "id_user")
     private User user;
 
-    @ManyToMany
-    @JoinColumn(name = "id")
+    @OneToOne
+    @JoinColumn(name = "id_product")
     @Column(name = "id_product")
     private Product product;
 
@@ -32,9 +33,10 @@ public class UserProduct implements Serializable {
     @Override
     public String toString() {
         return "UserProduct{" +
-                "id=" + idUserProduct +
+                "idUserProduct=" + idUserProduct +
                 ", user=" + user +
                 ", product=" + product +
+                ", activationCode='" + activationCode + '\'' +
                 '}';
     }
 }

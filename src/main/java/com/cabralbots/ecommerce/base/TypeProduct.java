@@ -1,4 +1,4 @@
-package com.cabralbots.ecommerce.entity;
+package com.cabralbots.ecommerce.base;
 
 public enum TypeProduct {
     BOT(1), INDICATOR(2);

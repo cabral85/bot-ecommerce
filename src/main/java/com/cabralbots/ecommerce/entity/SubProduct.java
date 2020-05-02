@@ -12,11 +12,11 @@ import java.io.Serializable;
 @Table(name = "B_SUB_PRODUCT")
 public class SubProduct implements Serializable {
     @Id
-    @Column(name = "id")
-    private Integer idSubProduct;
+    @Column(name = "id_sub_product")
+    private Long idSubProduct;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id_product")
     @Column(name = "id_product")
     private Product product;
 

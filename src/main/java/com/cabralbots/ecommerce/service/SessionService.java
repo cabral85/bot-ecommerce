@@ -12,7 +12,7 @@ public class SessionService {
     @Autowired
     private SessionRepository sessionRepository;
 
-    public List<Session> ListSessions(Integer userId){
+    public List<Session> ListSessions(Long userId){
         return sessionRepository.findAllByUser_IdUserProduct_User(userId);
     }
 
@@ -24,7 +24,7 @@ public class SessionService {
         sessionRepository.delete(session);
     }
 
-    public Session CheckSession(Integer idProduct, Integer idUser){
+    public Session CheckSession(Long idProduct, Long idUser){
         return sessionRepository.findByUserProduct_IdUserProductAndUserIdUserProduct_User(idProduct, idUser);
     }
 }

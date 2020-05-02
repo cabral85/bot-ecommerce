@@ -1,5 +1,6 @@
 package com.cabralbots.ecommerce.entity;
 
+import com.cabralbots.ecommerce.base.TypeProduct;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,9 +13,9 @@ import java.io.Serializable;
 @Entity
 public class Product implements Serializable {
     @Id
-    @Column(name = "id")
+    @Column(name = "id_product")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idProduct;
+    private Long idProduct;
 
     @Column(name = "product_name", length = 30, nullable = false)
     private String productName;

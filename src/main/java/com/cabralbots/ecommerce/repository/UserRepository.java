@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface UserRepository extends JpaRepository<User, Integer> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query("SELECT u.idUser, u.name, u.lastName, u.email, u.login, u.createDate FROM User u where  u.login = ?1")
     User findByLoginExceptPassword(String login);

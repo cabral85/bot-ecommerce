@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface SubProductRepository extends JpaRepository<SubProduct, Integer> {
-    List<SubProduct> findAllByProduct_IdProduct(Integer productId);
+public interface SubProductRepository extends JpaRepository<SubProduct, Long> {
+    List<SubProduct> findAllByProduct_IdProduct(Long productId);
 }

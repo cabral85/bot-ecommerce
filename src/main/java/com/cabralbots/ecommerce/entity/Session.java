@@ -13,15 +13,15 @@ import java.util.Date;
 @NoArgsConstructor
 public class Session implements Serializable {
     @Id
-    @Column(name = "id")
+    @Column(name = "id_session")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idSession;
+    private Long idSession;
 
     @Column(name = "ip")
     private String ip;
 
     @OneToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id_user_product")
     private UserProduct userProduct;
 
     @Temporal(TemporalType.DATE)
